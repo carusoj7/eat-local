@@ -4,7 +4,21 @@
 
 <main>
   <h1> <%= title %></h1>
-  <form id="new-form"></form>
+  <form id="new-form" action="/restaurants" method="POST">
+    <label for="restaurant-input">Name</label>
+    <input type="text" name="name" id="restaurant-input">
+    <label for="location-input">Location</label>
+    <input type="text" name="location" id="location-input">
+    <label for="specialty-select">Specialty</label>
+    <select name="specialty" id="specialty-select">
+      <option value="Breakfast">Dinner</option>
+      <option value="Brunch">Brunch</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner" selected>Dinner</option>
+    </select>
+    <label for="fancy">Fancy</label>
+    <input type="checkbox" name="fancy" id="fancy">
+  </form>
 </main>
 
 

@@ -14,6 +14,13 @@ function index(req, res) {
   })
 }
 
+function newRestaurant(req, res) {
+  res.render('restaurants/new', {
+    title: 'Add Restaurant'
+  })
+}
+
 export {
   index,
+  newRestaurant as new,
 }

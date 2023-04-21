@@ -32,8 +32,14 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  console.log("this works")
+  console.log(req.body);
+}
+
 export {
   index,
   newRestaurant as new,
   create,
+  show,
 }

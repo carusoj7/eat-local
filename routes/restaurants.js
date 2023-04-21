@@ -9,6 +9,8 @@ router.get('/', restaurantsCtrl.index)
 
 router.get('/new', restaurantsCtrl.new)
 
+router.get('/:restaurantId', restaurantsCtrl.show)
+
 //POST localhost:3000/restaurants
 
 router.post('/', restaurantsCtrl.create)

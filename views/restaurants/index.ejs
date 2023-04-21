@@ -4,6 +4,12 @@
 
 <main>
   <h1>RESTAURANTS</h1>
+  <ul>
+    <% restaurants.forEach(restaurant => { %>
+      <a href="/restaurant/<%= restaurant._id %>"><%= restaurant.name %></a>
+      in <%= restaurant.location %>
+    <% }) %>
+  </ul>
 </main>
 
 

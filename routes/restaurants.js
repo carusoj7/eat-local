@@ -9,6 +9,10 @@ router.get('/', restaurantsCtrl.index)
 
 router.get('/new', restaurantsCtrl.new)
 
+//POST localhost:3000/restaurants
+
+router.post('/', restaurantsCtrl.create)
+
 
 
 

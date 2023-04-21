@@ -19,8 +19,21 @@ function newRestaurant(req, res) {
     title: 'Add Restaurant'
   })
 }
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  req.body.fancy = !!req.body.fancy
+  Restaurant.create(req.body)
+  .then(restaurant => {
+    res.redirect('/restaurants')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
 
 export {
   index,
   newRestaurant as new,
+  create,
 }

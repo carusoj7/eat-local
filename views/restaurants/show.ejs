@@ -1,21 +1,20 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/restaurants/show.css" />
+<link rel="stylesheet" href="/stylesheets/restaurants/new.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
   <section>
 		<div>
-      <%= restaurant.title %> 
-      <a href="/restaurants/<%= restaurant._id %>">
+      <%= restaurant.name %> 
+      <a href="/restaurants/<%= restaurant._id %>/edit">
         <button>Edit Restaurant</button>
       </a>
     </div>
     <div><%= restaurant.location %></div>
     <div><%= restaurant.specialty %></div>
-    <div>Type of Food </div>
-    <div><%= restaurant.foodType</div>
-    <div> <%= restaurant.fancy ? 'fancy' : 'not fancy' %> </div>
+    <div><%= restaurant.foodType %></div>
+    <div> <%= restaurant.fancy ? 'Fancy' : 'Not Fancy' %> </div>
   </section>
 </main>
 

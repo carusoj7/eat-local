@@ -33,13 +33,38 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  console.log("this works")
-  console.log(req.body);
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    res.render('restaurants/show', {
+      restaurant,
+      title: 'Restaurant Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
 }
+
+function edit(req, res) {
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    res.render('restaurants/edit', {
+    restaurant,
+    title: 'Edit Restaurant'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
 
 export {
   index,
   newRestaurant as new,
   create,
   show,
+  edit,
 }

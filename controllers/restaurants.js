@@ -96,6 +96,11 @@ function deleteRestaurant(req, res) {
   })
 }
 
+function addReview(req, res){
+  console.log("This works")
+  console.log(req.body);
+}
+
 export {
   index,
   newRestaurant as new,
@@ -104,4 +109,5 @@ export {
   edit,
   update,
   deleteRestaurant as delete,
+  addReview
 }

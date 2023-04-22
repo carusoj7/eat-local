@@ -19,6 +19,8 @@ router.get('/:restaurantId/edit', isLoggedIn, restaurantsCtrl.edit)
 
 router.post('/', isLoggedIn, restaurantsCtrl.create)
 
+router.post('/:restaurantId/reviews', isLoggedIn, restaurantsCtrl.addReview)
+
 // PUT localhost:3000/restaurants/:restaurantId
 
 router.put('/:restaurantId', isLoggedIn, restaurantsCtrl.update)

@@ -24,6 +24,14 @@
       <% } %>
     </div>
   </section>
+  <h2>Reviews</h2>
+  <% if (user) { %>
+    <h3>Add A Review</h3>
+    <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
+      <textarea name="content"></textarea><br>
+      <button>Add Review</button>
+    </form>
+  <% } %>
 </main>
 
 

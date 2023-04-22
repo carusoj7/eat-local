@@ -61,9 +61,21 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  console.log("this works")
-  console.log(req.body)
-  console.log(req.params);
+  Restaurant.findByIdAndUpdate(req.params.restaurantId)
+  .then(restaurant => {
+    if (restaurant.owner.equals(req.user.profile._id)) {
+      restaurant.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/restaurants/${restaurant._id}`)
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
 }
 
 export {

@@ -21,7 +21,7 @@ router.post('/', isLoggedIn, restaurantsCtrl.create)
 
 // PUT localhost:3000/restaurants/:restaurantId
 
-router.put('/:restaurantId', isLoggedIn restaurantsCtrl.update)
+router.put('/:restaurantId', isLoggedIn, restaurantsCtrl.update)
 
 
 

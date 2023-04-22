@@ -60,6 +60,11 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  console.log("this works")
+  console.log(req.body)
+  console.log(req.params);
+}
 
 export {
   index,
@@ -67,4 +72,5 @@ export {
   create,
   show,
   edit,
+  update,
 }

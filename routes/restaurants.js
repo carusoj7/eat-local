@@ -17,6 +17,9 @@ router.get('/:restaurantId/edit', restaurantsCtrl.edit)
 
 router.post('/', restaurantsCtrl.create)
 
+// PUT localhost:3000/restaurants/:restaurantId
+
+router.put('/:restaurantId', restaurantsCtrl.update)
 
 
 

@@ -28,9 +28,42 @@
   <% if (user) { %>
     <h3>Add A Review</h3>
     <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
-      <textarea name="content"></textarea><br>
-      <button>Add Review</button>
-    </form>
+      <label for="content-textarea">Review:</label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <button type="submit">Add Review</button>
+  </form>
+  <% } %>
+  <% if (restaurant.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Review</th>
+          <th>Rating</th>
+					<th>Go again</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %> 
+        <% restaurant.reviews.forEach(function(review) { %>
+          <% total += review.rating %>
+          <tr>
+            <td><%= review.content %></td>
+            <td><%= review.rating %></td>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Reviews Yet</h3>
   <% } %>
 </main>
 

@@ -97,9 +97,25 @@ function deleteRestaurant(req, res) {
 }
 
 function addReview(req, res){
-  console.log("This works")
-  console.log(req.body);
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    req.body.author = req.user.profile._id
+    restaurant.reviews.push(req.body)
+    restaurant.save()
+    .then(() => {
+      res.redirect(`/restaurants/${restaurant._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/restaurants')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
 }
+
 
 export {
   index,

@@ -12,8 +12,8 @@
     <input type="text" name="location" value="<%= restaurant.location %>" id="location-input">
     <label for="specialty-select">Specialty</label>
     <select name="specialty" id="specialty-select">
-      <option value="<%= restaurant.speciality %>"><%= restaurant.specialty %></option>
-      <option value="Breakfast">Dinner</option>
+      <option value= "<%= restaurant.speciality %>" >
+      <option value="Breakfast">Breakfast</option>
       <option value="Brunch">Brunch</option>
       <option value="Lunch">Lunch</option>
       <option value="Dinner" selected>Dinner</option>
@@ -22,6 +22,7 @@
     <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">
     <label for="fancy">Fancy</label>
     <input type="checkbox" name="fancy" id="fancy">
+    <%= restaurant.fancy ? "checked" : "" %>
     <button type="submit">Save</button>
   </form>
   

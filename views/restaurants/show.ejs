@@ -6,10 +6,15 @@
   <h1><%= title %></h1>
   <section>
 		<div>
+      <% if (user) { %>
       <%= restaurant.name %> 
       <a href="/restaurants/<%= restaurant._id %>/edit">
         <button>Edit Restaurant</button>
       </a>
+      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit"> Delete Restaurant</button>
+        </form>
+      <% } %>
     </div>
     <div><%= restaurant.location %></div>
     <div><%= restaurant.specialty %></div>

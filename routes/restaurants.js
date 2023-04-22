@@ -23,6 +23,9 @@ router.post('/', isLoggedIn, restaurantsCtrl.create)
 
 router.put('/:restaurantId', isLoggedIn, restaurantsCtrl.update)
 
+// DELETE localhost:3000/restaurants/:restaurantId
+router.delete('/:restaurantId', isLoggedIn, restaurantsCtrl.delete)
+
 
 
 export{ router }

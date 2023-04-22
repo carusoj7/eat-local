@@ -78,6 +78,24 @@ function update(req, res) {
   })
 }
 
+function deleteRestaurant(req, res) {
+  Restaurant.findByIdAndDelete(req.params.restaurantId)
+  .then(restaurant => {
+    if (restaurant.owner.equals(req.user.profile._id)) {
+      restaurant.deleteOne()
+      .then(() => {
+        res.redirect('/restaurants')
+      })
+    } else {
+      throw Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
 export {
   index,
   newRestaurant as new,
@@ -85,4 +103,5 @@ export {
   show,
   edit,
   update,
+  deleteRestaurant as delete,
 }

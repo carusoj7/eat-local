@@ -38,6 +38,8 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
+    <label for="goAgain-checkbox">Visit Again?</label>
+    <input type="checkbox" name="goAgain" id="goAgain-checkbox">
     <button type="submit">Add Review</button>
   </form>
   <% } %>
@@ -47,7 +49,7 @@
         <tr>
           <th>Review</th>
           <th>Rating</th>
-					<th>Go again</th>
+					<th>Visit Again?</th>
         </tr>
       </thead>
       <tbody>
@@ -57,7 +59,14 @@
           <tr>
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
-            </td>
+            <td> <%= review.goAgain %></td>
+            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
+              <button>Edit Review</button>
+            </a>
+            </td> 
+            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button>X</button>
+            </form>
           </tr>
         <% }) %>
       </tbody>

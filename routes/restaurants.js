@@ -15,6 +15,8 @@ router.get('/:restaurantId', restaurantsCtrl.show)
 
 router.get('/:restaurantId/edit', isLoggedIn, restaurantsCtrl.edit)
 
+router.get('/:restaurantId/reviews/:reviewId/edit', isLoggedIn, restaurantsCtrl.editReview)
+
 //POST localhost:3000/restaurants
 
 router.post('/', isLoggedIn, restaurantsCtrl.create)

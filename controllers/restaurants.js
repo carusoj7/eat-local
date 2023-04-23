@@ -116,6 +116,12 @@ function addReview(req, res){
   })
 }
 
+function editReview(req, res) {
+  console.log("this works")
+  console.log(req.body)
+  console.log(req.params)
+}
+
 
 export {
   index,
@@ -125,5 +131,6 @@ export {
   edit,
   update,
   deleteRestaurant as delete,
-  addReview
+  addReview,
+  editReview,
 }

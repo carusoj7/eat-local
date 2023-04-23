@@ -141,9 +141,27 @@ function editReview(req, res) {
 }
 
 function updateReview(req, res){
-  console.log("this works")
-  console.log(req.body)
-  console.log(req.params)
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    const review = restaurant.reviews.id(req.params.reviewId)
+    if (review.author.equals(req.user.profile._id)) {
+      review.set(req.body)
+      restaurant.save()
+      .then(() => {
+        res.redirect(`/restaurants/${restaurant._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/restaurants')
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
 }
 
 

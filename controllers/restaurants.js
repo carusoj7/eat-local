@@ -164,6 +164,30 @@ function updateReview(req, res){
   })
 }
 
+function deleteReview(req, res) {
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    const review = restaurant.reviews.id(req.params.reviewId)
+    if (review.author.equals(req.user.profile._id)) {
+      restaurant.reviews.remove(review)
+      restaurant.save()
+      .then(() => {
+        res.redirect(`/restaurants/${restaurant._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/restaurants')
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
 
 export {
   index,
@@ -176,4 +200,5 @@ export {
   addReview,
   editReview,
   updateReview,
+  deleteReview,
 }

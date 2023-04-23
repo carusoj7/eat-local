@@ -35,6 +35,9 @@
             <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
               <button class="btn">Edit Review</button>
             </a>
+            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button>X</button>
+            </form>
           <% } %> 
         </li> 
       <% }) %>
@@ -73,9 +76,6 @@
             <td><%= review.rating %></td>
             <td> <%= review.goAgain %></td>
             </td> 
-            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button>X</button>
-            </form>
           </tr>
         <% }) %>
       </tbody>

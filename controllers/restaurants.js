@@ -34,6 +34,10 @@ function create(req, res) {
 
 function show(req, res) {
   Restaurant.findById(req.params.restaurantId)
+  .populate([
+    {path: "owner"},
+    {path: "reviews.author"}
+  ])
   .then(restaurant => {
     res.render('restaurants/show', {
       restaurant,
@@ -117,6 +121,26 @@ function addReview(req, res){
 }
 
 function editReview(req, res) {
+  Restaurant.findById(req.params.restaurantId)
+  .then(restaurant => {
+    const review = restaurant.reviews.id(req.params.reviewId)
+    if (review.author?.equals(req.user.profile._id)) {
+      res.render('restaurants/editReview', {
+        restaurant,
+        review,
+        title: 'Edit Review'
+      })
+    } else {
+      throw new Error('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
+function updateReview(req, res){
   console.log("this works")
   console.log(req.body)
   console.log(req.params)
@@ -133,4 +157,5 @@ export {
   deleteRestaurant as delete,
   addReview,
   editReview,
+  updateReview,
 }

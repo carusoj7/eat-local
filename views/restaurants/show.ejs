@@ -27,6 +27,18 @@
   <h2>Reviews</h2>
   <% if (user) { %>
     <h3>Add A Review</h3>
+    <ul>
+      <% restaurant.reviews?.forEach(review => { %>
+        <li>
+          <%= review.content %> - <%= review.author.name %>
+          <% if (review.author.equals(user?.profile._id)) { %>
+            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
+              <button class="btn">Edit Review</button>
+            </a>
+          <% } %> 
+        </li> 
+      <% }) %>
+    </ul>
     <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
       <label for="content-textarea">Review:</label>
     <textarea name="content" id="content-textarea"></textarea>
@@ -60,9 +72,6 @@
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.goAgain %></td>
-            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
-              <button>Edit Review</button>
-            </a>
             </td> 
             <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button>X</button>

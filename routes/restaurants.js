@@ -27,6 +27,8 @@ router.post('/:restaurantId/reviews', isLoggedIn, restaurantsCtrl.addReview)
 
 router.put('/:restaurantId', isLoggedIn, restaurantsCtrl.update)
 
+router.put('/:restaurantId/reviews/:reviewId', isLoggedIn, restaurantsCtrl.updateReview)
+
 // DELETE localhost:3000/restaurants/:restaurantId
 router.delete('/:restaurantId', isLoggedIn, restaurantsCtrl.delete)
 

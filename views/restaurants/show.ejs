@@ -3,13 +3,9 @@
 <link rel="stylesheet" href="/stylesheets/restaurants/show.css" />
 <%- include('../partials/nav') %>
 <main>
-  <h1><%= title %></h1>
+  <h1><%= restaurant.name %></h1>
   <section>
     <table>
-      <tr>
-        <td>Restaurant Name:</td>
-        <td><%= restaurant.name %></td>
-      </tr>
       <tr>
         <td>Location:</td>
         <td><%= restaurant.location %></td>
@@ -62,7 +58,7 @@
   </div>
   </form>
   <% } %>
-  <h3>Reviews</h3>
+  <h2>Reviews</h2>
   <% if (restaurant.reviews.length) { %>
     <table>
       <thead>
@@ -79,13 +75,14 @@
           <% total += review.rating %>
           <tr>
             <td><%=review.author.name%></td>
-              <td><%=review.content %></td>
+              <td class="review-cell"><%=review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.visitAgain ? "Yes" : "No" %></td>
             <td><% if (review.author.equals(user?.profile._id)) { %>
             <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
               <button class="btn">Edit Review</button>
             </a>
+            <td>
             <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button>X</button>
             </form>

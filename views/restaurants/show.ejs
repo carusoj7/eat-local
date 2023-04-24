@@ -12,7 +12,7 @@
     <div><%= restaurant.specialty %></div>
     <div>Food Type</div>
     <div><%= restaurant.foodType %></div>
-    <div><%= restaurant.fancy ? 'Fancy' : 'Not Fancy' %> </div>
+    <div><%= restaurant.attire %></div>
     <div>
       <% if (user) { %>
       <a href="/restaurants/<%= restaurant._id %>/edit">
@@ -53,8 +53,8 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
-    <label for="goAgain-checkbox">Visit Again?</label>
-    <input type="checkbox" name="goAgain" id="goAgain-checkbox">
+    <label for="visitAgain-checkbox">Visit Again?</label>
+    <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="true">
     <button type="submit">Add Review</button>
   </form>
   <% } %>
@@ -74,7 +74,7 @@
           <tr>
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
-            <td> <%= review.goAgain %></td>
+            <td> <%= review.visitAgain ? "Yes" : "No" %></td>
             </td> 
           </tr>
         <% }) %>

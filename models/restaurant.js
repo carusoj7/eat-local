@@ -7,7 +7,7 @@ const reviewSchema = new Schema ({
   content: String,
   rating: {
     type: Number, min: 1, max: 5},
-  goAgain: Boolean
+  visitAgain: Boolean
 })
 
 const restaurantSchema = new Schema({
@@ -18,7 +18,7 @@ const restaurantSchema = new Schema({
     enum: ['Breakfast', 'Brunch', 'Lunch', 'Dinner']
   },
   foodType: String,
-  fancy: Boolean,
+  attire: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
   reviews: [reviewSchema]
 })

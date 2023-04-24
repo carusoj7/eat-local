@@ -24,7 +24,7 @@ function create(req, res) {
   req.body.fancy = !!req.body.fancy
   Restaurant.create(req.body)
   .then(restaurant => {
-    res.redirect('/restaurants')
+    res.redirect(`/restaurants/${restaurant._id}`)
   })
   .catch(err => {
     console.log(err)

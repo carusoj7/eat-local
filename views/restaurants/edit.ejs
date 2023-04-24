@@ -20,12 +20,13 @@
     </select>
     <label for="foodType"> Style of Food</label>
     <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">
-    <label for="fancy">Fancy</label>
-    <input type="checkbox" name="fancy" id="fancy">
-    <%= restaurant.fancy ? "checked" : "" %>
-    <button type="submit">Save</button>
+    <label for="attire-select">Attire</label>
+    <select name="attire" id="attire-select">
+      <option value="Fancy">Fancy</option>
+      <option value="Casual">Casual</option>
+      </select>
+    <button type="submit">Submit</button>
   </form>
-  
   <% } %>
 </main>
 

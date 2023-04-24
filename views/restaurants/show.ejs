@@ -27,21 +27,6 @@
   <h2>Reviews</h2>
   <% if (user) { %>
     <h3>Add A Review</h3>
-    <ul>
-      <% restaurant.reviews?.forEach(review => { %>
-        <li>
-          <%= review.content %> - <%= review.author.name %>
-          <% if (review.author.equals(user?.profile._id)) { %>
-            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
-              <button class="btn">Edit Review</button>
-            </a>
-            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button>X</button>
-            </form>
-          <% } %> 
-        </li> 
-      <% }) %>
-    </ul>
     <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
       <label for="content-textarea">Review:</label>
     <textarea name="content" id="content-textarea"></textarea>
@@ -69,14 +54,22 @@
       </thead>
       <tbody>
         <% let total = 0 %> 
-        <% restaurant.reviews.forEach(function(review) { %>
+        <% restaurant.reviews?.forEach(function(review) { %>
           <% total += review.rating %>
           <tr>
-            <td><%= review.content %></td>
+            <td><%=review.author.name%> - <%=review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.visitAgain ? "Yes" : "No" %></td>
-            </td> 
+            <td><% if (review.author.equals(user?.profile._id)) { %>
+            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
+              <button class="btn">Edit Review</button>
+            </a>
+            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button>X</button>
+            </form>
+            </td>
           </tr>
+          <% } %> 
         <% }) %>
       </tbody>
     </table>

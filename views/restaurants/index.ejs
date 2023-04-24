@@ -14,9 +14,15 @@
     </thead>
     <tbody>
       <% restaurants.forEach(restaurant => { %>
+        <% let totalRating = 0 %>
+        <% restaurant.reviews.forEach(review => { %>
+          <% totalRating += review.rating %>
+        <% }) %>
+        <% const averageRating = restaurant.reviews.length ? (totalRating / restaurant.reviews.length).toFixed(1) : 0 %>
         <tr>
           <td class="name"><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
           <td class="location"><%= restaurant.location %></td>
+          <td class="rating"><%= averageRating %></td>
         </tr>
       <% }) %>
     </tbody>

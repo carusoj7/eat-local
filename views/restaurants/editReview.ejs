@@ -8,17 +8,17 @@
     method="POST"
   >
   <label for="content-textarea">Review:</label>
-  <textarea name="content" id="content-textarea" value="<% review.content %>"></textarea>
+  <textarea name="content" id="content-textarea"><%=review.content%> </textarea>
   <label for="rating-select">Rating:</label>
   <select name="rating" id="rating-select" value="<% review.rating %>">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
+    <option value="1" <% if (review.rating === 1) { %>selected<% } %>>1</option>
+  <option value="2" <% if (review.rating === 2) { %>selected<% } %>>2</option>
+  <option value="3" <% if (review.rating === 3) { %>selected<% } %>>3</option>
+  <option value="4" <% if (review.rating === 4) { %>selected<% } %>>4</option>
+  <option value="5" <% if (review.rating === 5) { %>selected<% } %>>5</option>
   </select>
   <label for="visitAgain-checkbox">Visit Again?</label>
-  <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="<%= review.visitAgain %>">
+  <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="Yes" <% if (review.visitAgain) { %>checked<% } %> >
   <button type="submit">Save</button>
 </form>
 </section>

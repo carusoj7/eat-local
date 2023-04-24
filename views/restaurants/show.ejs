@@ -47,6 +47,7 @@
     <table>
       <thead>
         <tr>
+          <th>Creator</td>
           <th>Review</th>
           <th>Rating</th>
 					<th>Visit Again?</th>
@@ -57,7 +58,8 @@
         <% restaurant.reviews?.forEach(function(review) { %>
           <% total += review.rating %>
           <tr>
-            <td><%=review.author.name%> - <%=review.content %></td>
+            <td><%=review.author.name%></td>
+              <td><%=review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.visitAgain ? "Yes" : "No" %></td>
             <td><% if (review.author.equals(user?.profile._id)) { %>

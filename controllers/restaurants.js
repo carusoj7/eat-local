@@ -145,7 +145,11 @@ function updateReview(req, res){
   .then(restaurant => {
     const review = restaurant.reviews.id(req.params.reviewId)
     if (review.author.equals(req.user.profile._id)) {
-      review.set(req.body)
+      review.set({
+        content: req.body.content,
+        rating: req.body.rating,
+        visitAgain: req.body.visitAgain !== undefined
+      })
       restaurant.save()
       .then(() => {
         res.redirect(`/restaurants/${restaurant._id}`)

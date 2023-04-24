@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/restaurants/forms.css" />
+<link rel="stylesheet" href="/stylesheets/restaurants/form.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -21,8 +21,8 @@
     <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">
     <label for="attire-select">Attire</label>
     <select name="attire" id="attire-select">
-      <option value="Fancy">Fancy</option>
-      <option value="Casual">Casual</option>
+      <option value="Fancy" <% if (restaurant.attire === "Fancy"){ %>selected<% } %>>Fancy</option>
+      <option value="Casual"<% if (restaurant.attire === "Casual"){ %>selected<% } %>>Casual</option>
       </select>
     <button type="submit">Submit</button>
   </form>

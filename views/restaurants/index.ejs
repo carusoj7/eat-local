@@ -4,12 +4,19 @@
 
 <main>
   <h1>RESTAURANTS</h1>
-  <table>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
     <tbody>
       <% restaurants.forEach(restaurant => { %>
         <tr>
-          <td><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
-          <td><%= restaurant.location %></td>
+          <td class="name"><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
+          <td class="location"><%= restaurant.location %></td>
         </tr>
       <% }) %>
     </tbody>

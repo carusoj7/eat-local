@@ -4,6 +4,16 @@
 </head>
 <body>
   <nav>
+    <a 
+    href="/restaurants/new" class=<%= title === 'Add Restaurant' ? 'active' : '' %>
+    >
+    ADD RESTAURANT
+  </a>
+    <a 
+      href="/restaurants" class=<%= title === 'All Restaurants' ? 'active' : '' %>
+      >
+      ALL RESTAURANTS
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -26,14 +36,4 @@
         data-logo_alignment="left"
       ></div>
     <% } %>
-    <a 
-    href="/restaurants/new" class=<%= title === 'Add Restaurant' ? 'active' : '' %>
-    >
-    ADD RESTAURANT
-  </a>
-    <a 
-      href="/restaurants" class=<%= title === 'All Restaurants' ? 'active' : '' %>
-      >
-      ALL RESTAURANTS
-    </a>
   </nav>

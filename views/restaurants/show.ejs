@@ -1,36 +1,53 @@
 <%- include('../partials/html-head') %>
+
 <link rel="stylesheet" href="/stylesheets/restaurants/show.css" />
 <%- include('../partials/nav') %>
-
 <main>
   <h1><%= title %></h1>
   <section>
-    <div><%= restaurant.name %></div>
-    <div>Location:</div>
-    <div><%= restaurant.location %></div>
-    <div>Speciality</div>
-    <div><%= restaurant.specialty %></div>
-    <div>Food Type</div>
-    <div><%= restaurant.foodType %></div>
-    <div> Attire </div>
-    <div><%= restaurant.attire %></div>
-    <div>
-      <% if (user) { %>
-      <a href="/restaurants/<%= restaurant._id %>/edit">
-        <button>Edit Restaurant</button>
-      </a>
-      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit"> Delete Restaurant</button>
-        </form>
-      <% } %>
-    </div>
+    <table>
+      <tr>
+        <td>Restaurant Name:</td>
+        <td><%= restaurant.name %></td>
+      </tr>
+      <tr>
+        <td>Location:</td>
+        <td><%= restaurant.location %></td>
+      </tr>
+      <tr>
+        <td>Speciality:</td>
+        <td><%= restaurant.specialty %></td>
+      </tr>
+      <tr>
+        <td>Food Type:</td>
+        <td><%= restaurant.foodType %></td>
+      </tr>
+      <tr>
+        <td>Attire:</td>
+        <td><%= restaurant.attire %></td>
+      </tr>
+      <tr>
+        <td>
+          <% if (user) { %>
+            <div class="restaurantBtns">
+          <a href="/restaurants/<%= restaurant._id %>/edit">
+            <button class=editButton>Edit Restaurant</button>
+          </a>
+          <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete Restaurant</button>
+          </form>
+          <% } %>
+          </div>
+        </td>
+      </tr>
+    </table>
   </section>
-  <h2>Reviews</h2>
+  <h2>Add A Review!</h2>
   <% if (user) { %>
-    <h3>Add A Review</h3>
     <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
-      <label for="content-textarea">Review:</label>
+      <label for="content-textarea"></label>
     <textarea name="content" id="content-textarea"></textarea>
+    <div>
     <label for="rating-select">Rating:</label>
     <select name="rating" id="rating-select">
       <option value="1">1</option>
@@ -42,8 +59,10 @@
     <label for="visitAgain-checkbox">Visit Again?</label>
     <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="true">
     <button type="submit">Add Review</button>
+  </div>
   </form>
   <% } %>
+  <h3>Reviews</h3>
   <% if (restaurant.reviews.length) { %>
     <table>
       <thead>

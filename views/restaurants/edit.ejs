@@ -12,11 +12,10 @@
     <input type="text" name="location" value="<%= restaurant.location %>" id="location-input">
     <label for="specialty-select">Specialty</label>
     <select name="specialty" id="specialty-select">
-      <option value= "<%= restaurant.speciality %>" >
-      <option value="Breakfast">Breakfast</option>
-      <option value="Brunch">Brunch</option>
-      <option value="Lunch">Lunch</option>
-      <option value="Dinner" selected>Dinner</option>
+      <option value="Breakfast" <% if (restaurant.specialty === "Breakfast") { %>selected<% } %>>Breakfast</option>
+      <option value="Brunch" <% if (restaurant.specialty === "Brunch") { %>selected<% } %>>Brunch</option>
+      <option value="Lunch" <% if (restaurant.specialty === "Lunch") { %>selected<% } %>>Lunch</option>
+      <option value="Dinner" <% if (restaurant.specialty === "Dinner") { %>selected<% } %>>Dinner</option>
     </select>
     <label for="foodType"> Style of Food</label>
     <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">

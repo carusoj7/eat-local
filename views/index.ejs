@@ -2,7 +2,9 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome to Eat Local <%= user ? user.profile.name : ""%></h1>
+  <h1>Welcome to Eat Local!
+    <h2>The Home of Local Restaurant Ratings and Reviews!</h2> 
+    <h3><%= user ? user.profile.name : ""%></h3>
   <% if (user?.profile.avatar) { %>
     <div>
       <img

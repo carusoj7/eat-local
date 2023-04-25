@@ -4,20 +4,20 @@
 </head>
 <body>
   <nav>
-    <a 
-    href="/restaurants/new" class=<%= title === 'Add Restaurant' ? 'active' : '' %>
-    >
-    ADD RESTAURANT
-  </a>
-    <a 
-      href="/restaurants" class=<%= title === 'All Restaurants' ? 'active' : '' %>
-      >
-      ALL RESTAURANTS
-    </a>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <div class="center">
+        <a href="/restaurants/new" class=<%= title === 'Add Restaurant' ? 'active' : '' %>>
+          ADD RESTAURANT
+        </a>
+        <a href="/restaurants" class=<%= title === 'All Restaurants' ? 'active' : '' %>>
+          ALL RESTAURANTS
+        </a>
+      </div>
+      <div class="center right">
+        <a href="/auth/logout">
+          <button type="submit">Logout</button>
+        </a>
+      </div>
     <% } else { %>
       <div 
         id="g_id_onload"
@@ -37,3 +37,4 @@
       ></div>
     <% } %>
   </nav>
+  

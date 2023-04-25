@@ -12,8 +12,8 @@ body {
 }
 
 nav {
-  background-color: #bac9db;
-  color: #000000f9;
+  background-color: #d44819;
+  color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@ nav {
 }
 
 nav > a{
-  color: #000000f9;
+  color: white;
   margin-left: auto;
   font-size: 24px;
 }

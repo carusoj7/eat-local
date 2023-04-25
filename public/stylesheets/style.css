@@ -2,16 +2,18 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: #b19898f9;
-  color: #f6f6f6;
+  background-image: url(/images/shiplap.jpeg);
+  background-size: cover;
+  color: black;
+  font-weight: bold;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
 nav {
-  background-color: #2b548b;
-  color: #b19898f9;
+  background-color: #bac9db;
+  color: #000000f9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +23,9 @@ nav {
 }
 
 nav > a{
-  color: #b19898f9;
+  color: #000000f9;
   margin-left: auto;
+  font-size: 24px;
 }
 
 .right {

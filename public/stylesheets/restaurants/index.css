@@ -18,18 +18,14 @@ table td {
 }
 
 #list a {
-  border-radius: 4px;
-  background-color: #b8c0c2;
+  font-size: 24px;
+  color: black;
+  text-underline-position: under;
   padding: 4px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #424748;
-}
-
-#list a:visited{
-  color: #424748;
 }
 
 #list a:hover {
-  background-color: white;
+  border-radius: 4px;
+  background-color: #bac9db;
+  color: #000000f9;
 }

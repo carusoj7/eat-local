@@ -26,9 +26,11 @@
 
  ## Credits:
 
- [Favicon image](https://stock.adobe.com/search/images?k=%22restaurant+icon%22)
+ [Favicon Image](https://stock.adobe.com/search/images?k=%22restaurant+icon%22)
 
- [Background image](https://images.app.goo.gl/4PqrYyjyurrMHq4f9)
+ [Background Image](https://images.app.goo.gl/4PqrYyjyurrMHq4f9)
+
+ [Google Fonts](https://fonts.google.com/specimen/Open+Sans#styles)
 
  ## Ice Box:
 

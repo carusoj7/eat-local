@@ -21,36 +21,36 @@
         <td><%= restaurant.attire %></td>
       </tr>
     </table>
-          <% if (user) { %>
-            <div class="restaurantBtns">
-          <a href="/restaurants/<%= restaurant._id %>/edit">
-            <button class=editBtn>Edit Restaurant</button>
-          </a>
-          <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-            <button class="deleteBtn" type="submit">Delete Restaurant</button>
-          </form>
-        </div>
-          <% } %>
+    <% if (user) { %>
+      <div class="restaurantBtns">
+        <a href="/restaurants/<%= restaurant._id %>/edit">
+          <button class=editBtn>Edit Restaurant</button>
+        </a>
+        <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+          <button class="deleteBtn" type="submit">Delete Restaurant</button>
+        </form>
+      </div>
+    <% } %>
   </section>
   <h2>Add A Review!</h2>
   <% if (user) { %>
     <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
       <label for="content-textarea"></label>
-    <textarea name="content" id="content-textarea"></textarea>
-    <div>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-    </select>
-    <label for="visitAgain-checkbox">Visit Again?</label>
-    <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="true">
-    <button class="addReviewBtn" type="submit">Add Review</button>
-  </div>
-  </form>
+      <textarea name="content" id="content-textarea"></textarea>
+      <div>
+        <label for="rating-select">Rating:</label>
+        <select name="rating" id="rating-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+        <label for="visitAgain-checkbox">Visit Again?</label>
+        <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="true">
+        <button class="addReviewBtn" type="submit">Add Review</button>
+      </div>
+    </form>
   <% } %>
   <h2>Reviews</h2>
   <% if (restaurant.reviews.length) { %>
@@ -70,19 +70,20 @@
           <% total += review.rating %>
           <tr>
             <td><%=review.author.name%></td>
-              <td class="review-cell"><%=review.content %></td>
+            <td class="review-cell"><%=review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.visitAgain ? "Yes" : "No" %></td>
             <td class="review-actions">
-            <% if (review.author.equals(user?.profile._id)) { %>
-            <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
-              <button class="editReviewBtn">Edit Review</button>
-            </a>
-            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="deleteReviewBtn">X</button>
-            </form>
-          <% } %> 
-          </td>
+              <% if (review.author.equals(user?.profile._id)) { %>
+                <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
+                  <button class="editReviewBtn">Edit Review</button>
+                </a>
+                <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                  <button class="deleteReviewBtn">X</button>
+                </form>
+              <% } %> 
+            </td>
+          </tr>
         <% }) %>
       </tbody>
     </table>

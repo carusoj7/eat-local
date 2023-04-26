@@ -5,27 +5,27 @@
 <main>
   <h1> <%= title %></h1>
   <% if (user) {%>
-  <form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
-    <label for="restaurant-input">Name</label>
-    <input type="text" name="name" value="<%= restaurant.name %>" id="restaurant-input">
-    <label for="location-input">Location</label>
-    <input type="text" name="location" value="<%= restaurant.location %>" id="location-input">
-    <label for="specialty-select">Specialty</label>
-    <select name="specialty" id="specialty-select">
-      <option value="Breakfast" <% if (restaurant.specialty === "Breakfast") { %>selected<% } %>>Breakfast</option>
-      <option value="Brunch" <% if (restaurant.specialty === "Brunch") { %>selected<% } %>>Brunch</option>
-      <option value="Lunch" <% if (restaurant.specialty === "Lunch") { %>selected<% } %>>Lunch</option>
-      <option value="Dinner" <% if (restaurant.specialty === "Dinner") { %>selected<% } %>>Dinner</option>
-    </select>
-    <label for="foodType"> Style of Food</label>
-    <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">
-    <label for="attire-select">Attire</label>
-    <select name="attire" id="attire-select">
-      <option value="Fancy" <% if (restaurant.attire === "Fancy"){ %>selected<% } %>>Fancy</option>
-      <option value="Casual"<% if (restaurant.attire === "Casual"){ %>selected<% } %>>Casual</option>
+    <form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+      <label for="restaurant-input">Name</label>
+      <input type="text" name="name" value="<%= restaurant.name %>" id="restaurant-input">
+      <label for="location-input">Location</label>
+      <input type="text" name="location" value="<%= restaurant.location %>" id="location-input">
+      <label for="specialty-select">Specialty</label>
+      <select name="specialty" id="specialty-select">
+        <option value="Breakfast" <% if (restaurant.specialty === "Breakfast") { %>selected<% } %>>Breakfast</option>
+        <option value="Brunch" <% if (restaurant.specialty === "Brunch") { %>selected<% } %>>Brunch</option>
+        <option value="Lunch" <% if (restaurant.specialty === "Lunch") { %>selected<% } %>>Lunch</option>
+        <option value="Dinner" <% if (restaurant.specialty === "Dinner") { %>selected<% } %>>Dinner</option>
       </select>
-    <button type="submit">Submit</button>
-  </form>
+      <label for="foodType"> Style of Food</label>
+      <input type="text" name="foodType" value="<%= restaurant.foodType %>"  id="foodType">
+      <label for="attire-select">Attire</label>
+      <select name="attire" id="attire-select">
+        <option value="Fancy" <% if (restaurant.attire === "Fancy"){ %>selected<% } %>>Fancy</option>
+        <option value="Casual"<% if (restaurant.attire === "Casual"){ %>selected<% } %>>Casual</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
   <% } %>
 </main>
 

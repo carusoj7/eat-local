@@ -16,11 +16,13 @@
 
  * JavaScript
  * CSS
+ * HTML
  * GitHub
  * Node.js
  * Express.js
  * MongoDB
  * Docker
+ * Google OATH
 
  ## Credits:
 

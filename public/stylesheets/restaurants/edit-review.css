@@ -31,10 +31,6 @@ textarea {
   justify-content: center;
 }
 
-#rating-select {
-  font-size: 14px;
-}
-
 .saveBtn {
   background-color: #bac9db;
   border-radius: 8px;

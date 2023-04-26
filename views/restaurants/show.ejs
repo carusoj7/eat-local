@@ -20,8 +20,7 @@
         <td><%= restaurant.foodType %></td>
         <td><%= restaurant.attire %></td>
       </tr>
-      <tr>
-        <td>
+    </table>
           <% if (user) { %>
             <div class="restaurantBtns">
           <a href="/restaurants/<%= restaurant._id %>/edit">
@@ -30,11 +29,8 @@
           <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
             <button class="deleteBtn" type="submit">Delete Restaurant</button>
           </form>
+        </div>
           <% } %>
-          </div>
-        </td>
-      </tr>
-    </table>
   </section>
   <h2>Add A Review!</h2>
   <% if (user) { %>

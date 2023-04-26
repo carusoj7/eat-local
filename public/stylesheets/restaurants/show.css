@@ -7,35 +7,57 @@ ul {
 li {
   font-weight: bold;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 325px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  font-size: 18px;
+}
 
 table {
+  margin: 0 auto;
   font-size: 20px;
 }
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #287281;
+  border-bottom: 2px solid #ec4e19;;
 }
 
 table td {
   padding: 10px;
+  text-align: center;
 }
 
-section {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
+table-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
-
-section div:nth-child(even) {
-  font-weight: bold;
-}
-
-textarea {
-  height: 100px;
-  width: 325px;
-  margin-top: -10px;
+.review-actions {
+  display: flex;
+  justify-content: center;
   margin-bottom: 20px;
+}
+
+.review-actions button {
+  margin: 0 10px;
+  display: flex;
 }
 
 .restaurantBtns {
@@ -48,4 +70,38 @@ textarea {
 .review-cell {
   max-width: 325px;
   word-wrap: break-word;
+  font-weight: normal;
+}
+
+.editBtn {
+  background-color: #bac9db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.deleteBtn {
+  background-color: rgb(244, 144, 144);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.restaurantBtns {
+  padding: 4px;
+}
+.addReviewBtn {
+  background-color: #bac9db;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-left: 30px;
+}
+.editReviewBtn {
+  background-color: #bac9db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.deleteReviewBtn {
+  background-color: rgb(244, 144, 144);
+  border-radius: 4px;
+  font-size: 16px;
 }

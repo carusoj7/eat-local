@@ -125,7 +125,7 @@ function editReview(req, res) {
   .then(restaurant => {
     const review = restaurant.reviews.id(req.params.reviewId)
     if (review.author?.equals(req.user.profile._id)) {
-      res.render('restaurants/editReview', {
+      res.render('restaurants/edit-review', {
         restaurant,
         review,
         title: 'Edit Review'

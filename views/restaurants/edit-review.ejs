@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/restaurants/edit-review.css" />
 <%- include('../partials/nav') %>
 
 <section>
@@ -7,19 +8,21 @@
     action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=PUT"
     method="POST"
   >
-  <label for="content-textarea">Review:</label>
+  <label for="content-textarea"></label>
   <textarea name="content" id="content-textarea"><%=review.content%> </textarea>
+  <div>
   <label for="rating-select">Rating:</label>
   <select name="rating" id="rating-select" value="<% review.rating %>">
     <option value="1" <% if (review.rating === 1) { %>selected<% } %>>1</option>
-  <option value="2" <% if (review.rating === 2) { %>selected<% } %>>2</option>
-  <option value="3" <% if (review.rating === 3) { %>selected<% } %>>3</option>
-  <option value="4" <% if (review.rating === 4) { %>selected<% } %>>4</option>
-  <option value="5" <% if (review.rating === 5) { %>selected<% } %>>5</option>
+    <option value="2" <% if (review.rating === 2) { %>selected<% } %>>2</option>
+    <option value="3" <% if (review.rating === 3) { %>selected<% } %>>3</option>
+    <option value="4" <% if (review.rating === 4) { %>selected<% } %>>4</option>
+    <option value="5" <% if (review.rating === 5) { %>selected<% } %>>5</option>
   </select>
   <label for="visitAgain-checkbox">Visit Again?</label>
   <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="Yes" <% if (review.visitAgain) { %>checked<% } %> >
-  <button type="submit">Save</button>
+  </div>
+  <button class="saveBtn" type="submit">Save</button>
 </form>
 </section>
 

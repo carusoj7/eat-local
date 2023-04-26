@@ -23,6 +23,6 @@ form > button {
 
 h1 {
   text-align: center;
-  text-underline-position: under;
+  text-decoration: underline;
   margin-top: 60px;
 }

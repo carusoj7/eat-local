@@ -6,20 +6,18 @@
   <h1><%= restaurant.name %></h1>
   <section>
     <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Specialty</th>
+          <th>Food Type</th>
+					<th>Attire</th>
+        </tr>
+      </thead>
       <tr>
-        <td>Location:</td>
         <td><%= restaurant.location %></td>
-      </tr>
-      <tr>
-        <td>Speciality:</td>
         <td><%= restaurant.specialty %></td>
-      </tr>
-      <tr>
-        <td>Food Type:</td>
         <td><%= restaurant.foodType %></td>
-      </tr>
-      <tr>
-        <td>Attire:</td>
         <td><%= restaurant.attire %></td>
       </tr>
       <tr>
@@ -27,10 +25,10 @@
           <% if (user) { %>
             <div class="restaurantBtns">
           <a href="/restaurants/<%= restaurant._id %>/edit">
-            <button class=editButton>Edit Restaurant</button>
+            <button class=editBtn>Edit Restaurant</button>
           </a>
           <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">Delete Restaurant</button>
+            <button class="deleteBtn" type="submit">Delete Restaurant</button>
           </form>
           <% } %>
           </div>
@@ -54,16 +52,17 @@
     </select>
     <label for="visitAgain-checkbox">Visit Again?</label>
     <input type="checkbox" name="visitAgain" id="visitAgain-checkbox" value="true">
-    <button type="submit">Add Review</button>
+    <button class="addReviewBtn" type="submit">Add Review</button>
   </div>
   </form>
   <% } %>
   <h2>Reviews</h2>
   <% if (restaurant.reviews.length) { %>
+    <div class="table-container">
     <table>
       <thead>
         <tr>
-          <th>Creator</td>
+          <th>Creator</th>
           <th>Review</th>
           <th>Rating</th>
 					<th>Visit Again?</th>
@@ -78,17 +77,16 @@
               <td class="review-cell"><%=review.content %></td>
             <td><%= review.rating %></td>
             <td> <%= review.visitAgain ? "Yes" : "No" %></td>
-            <td><% if (review.author.equals(user?.profile._id)) { %>
+            <td class="review-actions">
+            <% if (review.author.equals(user?.profile._id)) { %>
             <a href="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit">
-              <button class="btn">Edit Review</button>
+              <button class="editReviewBtn">Edit Review</button>
             </a>
-            <td>
             <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button>X</button>
+              <button class="deleteReviewBtn">X</button>
             </form>
-            </td>
-          </tr>
           <% } %> 
+          </td>
         <% }) %>
       </tbody>
     </table>
@@ -96,7 +94,5 @@
     <h3>No Reviews Yet</h3>
   <% } %>
 </main>
-
-
 
 <%- include('../partials/footer') %>

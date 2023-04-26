@@ -10,7 +10,7 @@
  ## [Planning Materials](https://trello.com/b/i1IN5qje/eat-local)
 
  ## Motivation
- I created this application to provide users with a seamless and efficient experience for discovering new restaurants. With going out to eat getting more and more expensive, this application displays a platform to see genuine feedback. as well as gives users an outlet to describe their own experiences. Most importantly, I wanted to prioritize local restaurants to support the small business community.
+ I created this application to provide users with a seamless and efficient experience for discovering new restaurants. With going out to eat getting more and more expensive, this application displays a platform to see genuine feedback, as well as gives users an outlet to describe their own experiences. Most importantly, I wanted to prioritize local restaurants to support the small business community.
 
  ## Technology Implemented:
 
@@ -20,8 +20,7 @@
  * Node.js
  * Express.js
  * MongoDB
- * Mongoose
- * Google OATH
+ * Docker
 
  ## Credits:
 

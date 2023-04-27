@@ -89,14 +89,14 @@ table-container {
 .editBtn {
   background-color: #bac9db;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
 }
 
 .deleteBtn {
   background-color: rgb(244, 144, 144);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
 }
 
@@ -109,7 +109,7 @@ table-container {
 .addReviewBtn {
   background-color: #bac9db;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 30px;
   padding: 5px;
 }
@@ -117,7 +117,7 @@ table-container {
 .editReviewBtn {
   background-color: #bac9db;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
   padding: 5px;
 }
@@ -125,7 +125,7 @@ table-container {
 .deleteReviewBtn {
   background-color: rgb(244, 144, 144);
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
 }
 

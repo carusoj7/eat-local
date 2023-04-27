@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 body {
   background-image: url(/images/shiplap.jpeg);
   background-size: cover;
@@ -8,6 +9,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
+
 h1 {
   margin-top: 50px;
   font-size: 48px;
@@ -50,4 +52,3 @@ table {
   font-size: 16px;
   text-decoration: none;
 }
-

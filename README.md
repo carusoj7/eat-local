@@ -16,13 +16,14 @@
 
  * JavaScript
  * CSS
- * HTML
- * GitHub
- * Node.js
- * Express.js
+ * Git
+ * Node
+ * Express
  * MongoDB
+ * Mongoose
  * Docker
  * Google OATH
+ * EJS
 
  ## Credits:
 

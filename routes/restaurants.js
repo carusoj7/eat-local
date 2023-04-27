@@ -11,7 +11,7 @@ router.get('/', isLoggedIn, restaurantsCtrl.index)
 
 router.get('/new', isLoggedIn, restaurantsCtrl.new)
 
-router.get('/:restaurantId', restaurantsCtrl.show)
+router.get('/:restaurantId', isLoggedIn, restaurantsCtrl.show)
 
 router.get('/:restaurantId/edit', isLoggedIn, restaurantsCtrl.edit)
 

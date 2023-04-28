@@ -1,6 +1,7 @@
  # **Eat Local**
 
  ![image](public/images/eat-local-homepage.png)
+ ![image](public/images/eat-local-all-restaurants.png)
 
  ## Objective
  Eat Local is a restaurant review-based application where users can view details and reviews of local restaurants. They can also add new restaurants to the list along with their overall experience. 
